@@ -1,0 +1,6 @@
+#忽略 .class 文件
+*.class
+#忽略 idea文件或目录
+idea
+#忽略 .iml文件
+*.iml
