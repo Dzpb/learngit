@@ -11,12 +11,12 @@ public class ScheduledTaskService {
     private static final SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DD HH:mm:ss");
 
     @Scheduled(fixedRate = 5000)
-    public void reportCurrentTime(){
+    public void reportCurrentTime() {
         System.out.println("每隔5s执行一次：" + sdf.format(new Date()));
     }
 
     @Scheduled(cron = "0 31 23 ? * *")
-    public void fixTimeExecution(){
+    public void fixTimeExecution() {
         System.out.println("在指定时间：" + sdf.format(new Date()) + " 执行");
     }
 }

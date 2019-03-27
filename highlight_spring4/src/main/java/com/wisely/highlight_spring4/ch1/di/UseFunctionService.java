@@ -9,7 +9,7 @@ public class UseFunctionService {
     @Autowired
     FunctionService functionService;
 
-    public String sayHello(String word){
+    public String sayHello(String word) {
         return functionService.sayHello(word);
     }
 }

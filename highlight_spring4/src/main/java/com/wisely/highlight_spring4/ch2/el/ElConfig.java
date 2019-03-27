@@ -43,11 +43,11 @@ public class ElConfig {
     private Environment environment;
 
     @Bean
-    public static PropertySourcesPlaceholderConfigurer propertyConfigure(){
+    public static PropertySourcesPlaceholderConfigurer propertyConfigure() {
         return new PropertySourcesPlaceholderConfigurer();
     }
 
-    public void outputResource(){
+    public void outputResource() {
         System.out.println(normal);
         System.out.println(osName);
         System.out.println(randomNumber);

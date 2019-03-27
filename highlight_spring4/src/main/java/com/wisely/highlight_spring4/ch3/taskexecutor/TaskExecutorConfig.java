@@ -13,7 +13,8 @@ import java.util.concurrent.Executor;
 @ComponentScan("com.wisely.highlight_spring4.ch3.taskexecutor")
 @EnableAsync                        // 注解开启异步任务支持
 public class TaskExecutorConfig implements AsyncConfigurer {        // 配置类实现 AsyncConfigurer 接口并重写 getAsyncExecutor 方法，
-    @Override                                                       // 并返回一个ThreadPoolTaskExecutor,这样我们就获得了一个基于线程的 TaskExecutor
+    @Override
+    // 并返回一个ThreadPoolTaskExecutor,这样我们就获得了一个基于线程的 TaskExecutor
     public Executor getAsyncExecutor() {
         ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
         taskExecutor.setCorePoolSize(5);

@@ -15,12 +15,12 @@ import java.lang.reflect.Method;
 public class LogAspect {
 
     @Pointcut("@annotation(com.wisely.highlight_spring4.ch1.aop.Action)")   //注解声明切点
-    public void annotationPointCut(){
+    public void annotationPointCut() {
 
     }
 
     @After("annotationPointCut()")      // 注解声明一个建言，并使用@PointCut定义的切点
-    public void after(JoinPoint joinPoint){
+    public void after(JoinPoint joinPoint) {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
         Action action = method.getAnnotation(Action.class);
@@ -28,7 +28,7 @@ public class LogAspect {
     }
 
     @Before("execution(* com.wisely.highlight_spring4.ch1.aop.DemoMethodService.*(..))")   //注解声明一个建言，此建言直接使用拦截规则作为参数
-    public void before(JoinPoint joinPoint){
+    public void before(JoinPoint joinPoint) {
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
         Method method = methodSignature.getMethod();
         System.out.println("方法规则式拦截，" + method.getName());
